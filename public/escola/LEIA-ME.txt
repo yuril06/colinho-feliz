@@ -1,0 +1,47 @@
+ARQUIVOS DA ESCOLA
+==================
+
+Solte os arquivos nesta pasta com EXATAMENTE estes nomes. Cada arquivo que
+existir substitui automaticamente a foto de exemplo; os que faltarem continuam
+com a foto do Unsplash. Fotos podem ser .jpg, .png ou .webp.
+
+Depois de adicionar: rode  npm run blur  e reinicie o  npm run dev.
+
+LOGO
+  logo.svg (ou .png)          logo horizontal, fundo transparente, ~ 600x180
+  logo-branco.svg (opcional)  versão clara para fundos escuros
+  (favicon: troque src/app/icon.svg, ou coloque um src/app/icon.png 512x512)
+
+HERO (vertical ou quadrada, 1400x1600; trocam devagar ao lado do título)
+  hero-1.jpg                  a melhor foto: também vira a prévia no WhatsApp
+  hero-2.jpg
+  hero-3.jpg
+  hero-4.jpg
+
+TURMAS (quadrada, 600x600; aparecem pequenas, como marcador da lista)
+  turma-bercario.jpg
+  turma-maternal-1.jpg
+  turma-maternal-2.jpg
+  turma-jardim-1.jpg
+  turma-jardim-2.jpg
+
+AMBIENTES (vertical 4:5, 1200x1500, assunto no centro, mesma luz em todas)
+  ambiente-bercario.jpg
+  ambiente-soninho.jpg
+  ambiente-parque.jpg
+  ambiente-salas.jpg
+  ambiente-refeitorio.jpg
+  ambiente-sensorial.jpg
+  ambiente-biblioteca.jpg
+  ambiente-entrada.jpg
+
+ROTINA (horizontal, 1600x1100)
+  rotina-manha.jpg            atividade da manhã
+  rotina-almoco.jpg           refeição
+  rotina-tarde.jpg            parque / área externa
+
+OUTRAS
+  proposta.jpg                vertical 4:5, 1200x1500 — crianças em atividade (mãos/costas)
+
+Dica: prefira ambientes, mãos e crianças de costas, e tenha autorização de
+imagem das famílias. Fotos até ~500 KB cada.

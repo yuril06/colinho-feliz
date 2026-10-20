@@ -1,0 +1,196 @@
+@import "tailwindcss";
+
+/*
+ * Tokens do DESIGN.md. As cores reais vêm de src/config/escola.ts e são injetadas
+ * no <head> como --cor-* (ver src/app/layout.tsx). Os valores abaixo são só fallback.
+ */
+:root {
+  --cor-chao: #ffeff5;
+  --cor-papel: #ffffff;
+  --cor-folha: #f3eafb;
+  --cor-agua: #ddf4f1;
+  --cor-foto: #f9d2e1;
+  --cor-tinta: #3a1a50;
+  --cor-suave: #6b4f7c;
+  --cor-acento: #d6336c;
+  --cor-rosa: #ec4a86;
+  --cor-roxo: #6a2fa0;
+  --cor-teal: #2bb3a6;
+
+  /* Cantos redondos, como brinquedo */
+  --raio: 28px;
+  --coracao: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-8.6 -8.6 17.2 15.8'%3E%3Cpath d='M0 7.07L-7.07 0A5 5 0 0 1 0-7.07A5 5 0 0 1 7.07 0Z'/%3E%3C/svg%3E");
+
+  --margem: 16px;
+
+  /* Cinco tamanhos: o nome grande, títulos, lead, texto, nota */
+  --t-nota: 0.875rem;
+  --t-corpo: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+  --t-lead: clamp(1.3rem, 1.1rem + 0.8vw, 1.75rem);
+  --t-titulo: clamp(2.125rem, 1.4rem + 3vw, 4rem);
+  --t-display: clamp(2.875rem, 1.4rem + 6vw, 6.5rem);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --margem: 32px;
+  }
+}
+
+@theme inline {
+  --color-chao: var(--cor-chao);
+  --color-papel: var(--cor-papel);
+  --color-folha: var(--cor-folha);
+  --color-agua: var(--cor-agua);
+  --color-roxo: var(--cor-roxo);
+  --color-teal: var(--cor-teal);
+  --color-foto: var(--cor-foto);
+  --color-tinta: var(--cor-tinta);
+  --color-suave: var(--cor-suave);
+  --color-acento: var(--cor-acento);
+  --color-acento-escuro: color-mix(in oklab, var(--cor-acento) 78%, black);
+  --color-rosa: var(--cor-rosa);
+
+  --font-sans: var(--fonte-corpo), ui-rounded, system-ui, sans-serif;
+  --font-serif: var(--fonte-titulo), ui-rounded, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--cor-chao);
+  color: var(--cor-tinta);
+  font-family: var(--font-sans);
+  font-size: var(--t-corpo);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a,
+button,
+select,
+input,
+label,
+summary {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: color-mix(in oklab, var(--cor-acento) 18%, transparent);
+}
+
+::selection {
+  background: var(--cor-tinta);
+  color: var(--cor-papel);
+}
+
+:focus-visible {
+  outline: 3px solid var(--cor-acento);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@layer components {
+  .moldura {
+    @apply mx-auto w-full max-w-[1280px] px-[var(--margem)];
+  }
+
+  .t-display {
+    font-family: var(--font-serif);
+    font-size: var(--t-display);
+    font-weight: 600;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+  .t-titulo {
+    font-family: var(--font-serif);
+    font-size: var(--t-titulo);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+  .t-lead {
+    font-family: var(--font-serif);
+    font-size: var(--t-lead);
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  .t-corpo {
+    font-size: var(--t-corpo);
+    line-height: 1.5;
+  }
+  .t-nota {
+    font-size: var(--t-nota);
+    line-height: 1.45;
+  }
+
+  /* Botão: pílula chapada no rosa do logo. Um formato só. */
+  .botao {
+    @apply inline-flex min-h-14 cursor-pointer items-center justify-center gap-2.5 rounded-full bg-acento px-8 font-bold text-white transition-[background-color,transform] duration-200 select-none hover:bg-acento-escuro active:scale-[0.98];
+    font-size: var(--t-corpo);
+  }
+
+  /* Marcador de lista: o coraçãozinho do logo */
+  .coracao {
+    display: inline-block;
+    width: 0.85em;
+    height: 0.78em;
+    flex-shrink: 0;
+    background: var(--cor-rosa);
+    -webkit-mask: var(--coracao) center / contain no-repeat;
+    mask: var(--coracao) center / contain no-repeat;
+  }
+
+  .link {
+    @apply font-semibold underline decoration-2 underline-offset-4 transition-[text-decoration-color];
+    text-decoration-color: color-mix(in oklab, currentColor 35%, transparent);
+  }
+  .link:hover {
+    text-decoration-color: currentColor;
+  }
+}
+
+/* Entrada da capa */
+@keyframes entrada {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.entra {
+  animation: entrada 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.sem-barra {
+  scrollbar-width: none;
+}
+.sem-barra::-webkit-scrollbar {
+  display: none;
+}
