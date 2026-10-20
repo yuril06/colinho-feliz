@@ -55,7 +55,7 @@ export const escola = {
     cidade: "São Bernardo do Campo",
     estado: "SP",
     cep: "09629-090",
-    mapsUrl: "https://maps.app.goo.gl/15wh3K6VMfXrXhNG7",
+    mapsUrl: "https://maps.app.goo.gl/pyQuZfZwhs8nrALk7",
     latitude: -23.6548576,
     longitude: -46.5672814,
   },

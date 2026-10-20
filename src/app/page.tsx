@@ -7,6 +7,7 @@ import { Duvidas } from "@/components/secoes/Duvidas";
 import { Periodos } from "@/components/secoes/Periodos";
 import { Servicos } from "@/components/secoes/Servicos";
 import { Visita } from "@/components/secoes/Visita";
+import { Mapa } from "@/components/secoes/Mapa";
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
         <Periodos />
         <Duvidas />
         <Visita />
+        <Mapa />
       </main>
       <Footer />
       <WhatsAppFlutuante />
