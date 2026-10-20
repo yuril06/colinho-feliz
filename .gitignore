@@ -43,3 +43,5 @@ next-env.d.ts
 # design-taste-frontend (screenshots e relatórios)
 /.taste-skill/
 /.playwright-cli/
+
+.vercel
