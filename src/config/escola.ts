@@ -18,7 +18,7 @@ export const escola = {
   frase: "Cuidando com amor, educando para o futuro.",
   descricao:
     "Berçário e recreação infantil na Vila Afonsina, em São Bernardo do Campo, para crianças a partir de 4 meses. Período integral ou meio período, contraturno escolar, reforço escolar e curso de férias.",
-  siteUrl: "https://colinhofeliz.vercel.app", // CONFIRMAR domínio
+  siteUrl: "https://colinho-feliz.vercel.app",
 
   // ---------------------------------------------------------------------------
   // CORES — tiradas do logo: o rosa do "COLINHO" e dos corações, o roxo do
